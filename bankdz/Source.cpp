@@ -2,21 +2,13 @@
 #include<string>
 #include<list>
 #include<Windows.h>
-
 using namespace std;
-
-
-
 class Account {
 public:
 	int num;
 	float money;
 
-
-	Account() {
-
-
-	}
+    Account() {}
 	Account(int number, float balance) {
 		setnumber(number);
 		setbalance(balance);
@@ -31,8 +23,7 @@ public:
 			this->money = balance;
 		}
 	}
-
-	void add_money() {
+    void add_money() {
 		float sum;
 	again:
 		cout << "Enter sum->";
@@ -41,13 +32,11 @@ public:
 			cout << "Sum entered incorrect!" << endl;
 			goto again;
 		}
-
-		else {
+        else {
 			money += sum;
 		}
 	}
-
-	void withdraw_money() {
+    void withdraw_money() {
 		float sum;
 		int numb;
 	again:
@@ -60,17 +49,12 @@ public:
 		else {
 			money -= sum;
 		}
-
-	}
+    }
 	void print() {
-
-		cout << "Number account ->" << num << endl;
+        cout << "Number account ->" << num << endl;
 		cout << "Balance account -> " << money << endl;
 		cout << endl;
 	}
-
-
-
 };
 
 class Info {
@@ -207,9 +191,7 @@ int main() {
 				if (a == i->num) {
 					i->add_money();
 				}
-
-
-			}
+            }
 			break;
 		case 4:
 			int b;
@@ -219,9 +201,7 @@ int main() {
 				if (b == i->num) {
 					i->withdraw_money();
 				}
-
-
-			}
+            }
 			break;
 		case 5:
 			bank.Transfer_found();
@@ -230,8 +210,5 @@ int main() {
 			cout << "Bye" << endl;
 			break;
 		}
-
-
-
-	} while (action != 6);
+    } while (action != 6);
 }
